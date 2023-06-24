@@ -11,7 +11,7 @@
 ## **_Gradle dependencies and Repositories:_**
 
 ### Dependencies :
-'<group-id>:<artifact-id>:<version>'
+```'<group-id>:<artifact-id>:<version>'```
 
 Que. where does these dependencies come from?
 Ans. from repositories
