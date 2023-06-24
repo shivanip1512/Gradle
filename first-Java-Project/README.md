@@ -13,11 +13,11 @@
 ### Dependencies :
 ```'<group-id>:<artifact-id>:<version>'```
 
-Que. where does these dependencies come from?
+Que. where does these dependencies come from? <br />
 Ans. from repositories
 
 ### Repositories :
-location from where gradle will pull all libraries/dependencies required for our project.
+location from where gradle will pull all libraries/dependencies required for our project. <br />
 Once we are done with building projects, we can push our artifact(s) to the repositories also.
 
 _Gradle caches all these dependencies locally._
@@ -43,16 +43,16 @@ _Gradle caches all these dependencies locally._
 ## ***Gradle Build Phases***
 
 Every Gradle build will have 3 phases :
-1. **Initialization** - *Lights*
-        Figures out Project type (How many modules?) and creates Proj objects. 
+1. **Initialization** - *Lights* <br />
+        Figures out Project type (How many modules?) and creates Proj objects. <br />
         Does by looking onto build.gradle & settings.gradle
 
-2. **Configuration** - *Camera*
-        Go through all tasks required to run current build.
+2. **Configuration** - *Camera* <br />
+        Go through all tasks required to run current build. <br />
         Creates DAG (Direct acyclic graph).
 
-3. **Execution** - *Action*
-        Runs our tasks here.
+3. **Execution** - *Action* <br />
+        Runs our tasks here. <br />
         Compiled, Tested, Jar/War
 
 ```groovy
@@ -128,7 +128,7 @@ BUILD SUCCESSFUL in 1s
 7 actionable tasks: 7 up-to-date
 ```
 
-We can see **build time decreasing** with every build.
+We can see **build time decreasing** with every build. <br />
 Kick-off background deamon : 
  ```bash command-line
  gradlew.bat build --no-daemon
