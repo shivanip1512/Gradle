@@ -40,7 +40,7 @@ _Gradle caches all these dependencies locally._
 
 **implementation vs api/compile :** "api" would leak transitive dependency in referring project, which was not intended. "implementation" would block this leakage of configuration.
 
-### ***Gradle Phases***
+### ***Gradle Build Phases***
 
 Every Gradle build will have 3 phases :
 1. **Initialization** - *Lights*
@@ -82,3 +82,54 @@ Do Last :}
 BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 ```
+
+### ***Gradle Daemon***
+Run this on Server
+ ```bash command-line
+ gradlew.bat build --daemon
+ ```
+
+ ```bash command-line
+F:\Projects\Gradle\first-Java-Project>gradlew.bat build --daemon
+
+> Configure project :JavaProject
+outside task Start...
+Gradle Rocks!
+outside task End...
+
+BUILD SUCCESSFUL in 4s
+7 actionable tasks: 7 executed
+F:\Projects\Gradle\first-Java-Project>gradlew.bat clean
+
+> Configure project :JavaProject
+outside task Start...
+Gradle Rocks!
+outside task End...
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+F:\Projects\Gradle\first-Java-Project>gradlew.bat build
+
+> Configure project :JavaProject
+outside task Start...
+Gradle Rocks!
+outside task End...
+
+BUILD SUCCESSFUL in 4s
+7 actionable tasks: 7 executed
+F:\Projects\Gradle\first-Java-Project>gradlew.bat build
+
+> Configure project :JavaProject
+outside task Start...
+Gradle Rocks!
+outside task End...
+
+BUILD SUCCESSFUL in 1s
+7 actionable tasks: 7 up-to-date
+```
+
+We can see **build time decreasing** with every build.
+Kick-off background deamon : 
+ ```bash command-line
+ gradlew.bat build --no-daemon
+ ```
