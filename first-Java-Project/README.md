@@ -22,7 +22,7 @@ Once we are done with building projects, we can push our artifact(s) to the repo
 
 _Gradle caches all these dependencies locally._
 
-### ***Gradle Configurations***
+## ***Gradle Configurations***
 
 | Scopes | Configurations | |
 | --- | --- | ---|
@@ -40,7 +40,7 @@ _Gradle caches all these dependencies locally._
 
 **implementation vs api/compile :** "api" would leak transitive dependency in referring project, which was not intended. "implementation" would block this leakage of configuration.
 
-### ***Gradle Build Phases***
+## ***Gradle Build Phases***
 
 Every Gradle build will have 3 phases :
 1. **Initialization** - *Lights*
@@ -83,7 +83,7 @@ BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 ```
 
-### ***Gradle Daemon***
+## ***Gradle Daemon***
 Run this on Server
  ```bash command-line
  gradlew.bat build --daemon
