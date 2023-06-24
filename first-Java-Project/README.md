@@ -21,3 +21,23 @@ location from where gradle will pull all libraries/dependencies required for our
 Once we are done with building projects, we can push our artifact(s) to the repositories also.
 
 _Gradle caches all these dependencies locally._
+
+### Gradle Configurations
+
+| Scopes | Configurations | |
+| --- | --- | ---|
+| compile | implementation | api (compile) |
+| provided | compileOnly |
+| runtime | runtimeOnly |
+| test | testImplementaion | testCompileOnly, testRuntimeOnly |
+
+##### Examples :
+
+- **CompileOnly** : Dozer, Lombok, JMapper
+- **runtimeOnly** : logging-api (compile-time), logging-impl
+- **testCompileOnly** : Junit, Jasmine, Mockito
+- **testRuntimeOnly** : Jupiter, Jasmine Runtime
+
+**implementation vs api/compile :** "api" would leak transitive dependency in referring project, which was not intended. "implementation" would block this leakage of configuration.
+
+
