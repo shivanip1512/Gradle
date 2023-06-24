@@ -35,3 +35,15 @@ application {
     // Define the main class for the application.
     mainClass = 'com.shivani.gradle.App'
 }
+
+println 'outside task Start...'
+task firstTask{
+    println 'Gradle Rocks!'  // executed in configuration phase - NOT task logic
+    doFirst(){
+       println 'Do First :)' // executed first during execution phase
+    }
+    doLast(){
+       println 'Do Last :}' // executed last during execution phase
+    }
+}
+println 'outside task End...'

@@ -8,7 +8,7 @@
 6. gradle jar
 7. gradle run
 
-## _Gradle dependencies and Repositories:_
+## **_Gradle dependencies and Repositories:_**
 
 ### Dependencies :
 '<group-id>:<artifact-id>:<version>'
@@ -22,7 +22,7 @@ Once we are done with building projects, we can push our artifact(s) to the repo
 
 _Gradle caches all these dependencies locally._
 
-### Gradle Configurations
+### ***Gradle Configurations***
 
 | Scopes | Configurations | |
 | --- | --- | ---|
@@ -40,4 +40,45 @@ _Gradle caches all these dependencies locally._
 
 **implementation vs api/compile :** "api" would leak transitive dependency in referring project, which was not intended. "implementation" would block this leakage of configuration.
 
+### ***Gradle Phases***
 
+Every Gradle build will have 3 phases :
+1. **Initialization** - *Lights*
+        Figures out Project type (How many modules?) and creates Proj objects. 
+        Does by looking onto build.gradle & settings.gradle
+
+2. **Configuration** - *Camera*
+        Go through all tasks required to run current build.
+        Creates DAG (Direct acyclic graph).
+
+3. **Execution** - *Action*
+        Runs our tasks here.
+        Compiled, Tested, Jar/War
+
+```groovy
+println 'outside task Start...' // executed in configuration phase 
+task firstTask{
+    println 'Gradle Rocks!'  // executed in configuration phase - NOT task logic
+    doFirst(){
+       println 'Do First :)' // executed first during execution phase
+    }
+    doLast(){
+       println 'Do Last :}' // executed last during execution phase
+    }
+}
+println 'outside task End...' // executed in configuration phase 
+```
+Output :
+```
+> Configure project :JavaProject
+outside task Start...
+Gradle Rocks!
+outside task End...
+
+> Task :JavaProject:firstTask
+Do First :)
+Do Last :}
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+```
