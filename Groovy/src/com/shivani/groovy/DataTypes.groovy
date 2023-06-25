@@ -30,5 +30,5 @@ Have a great day!!
 '''
 println multilineStr
 
-emailPattern=/[a-z]/
-println "test" ==~ emailPattern // ==~ pattern operator
+emailPattern=/[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+/
+println "test@gmail.com" ==~ emailPattern // ==~ pattern operator
