@@ -23,3 +23,22 @@ ll.reverseEach { print it }
 println ()
 
 //  ll.permutations { println it }
+
+set=['java','javascript','python','java'] as Set
+println set
+println set.class
+
+map=[model:'Nexon',company:"Tata",rating :5]
+println map
+map.each { k,v->
+	print k + " "
+	print v
+	println()
+}
+
+println map.model
+println map['model']
+println map.get('model')
+
+map.review = "Its Awesome!!"
+println map
