@@ -34,4 +34,8 @@ project.dependencies ({
 
 ##### *__Project Properties :__*
 Example : println project.name <br>
-https://docs.gradle.org/current/dsl/org.gradle.api.Project.html
+1. https://docs.gradle.org/current/dsl/org.gradle.api.Project.html
+2. https://docs.gradle.org/current/userguide/writing_build_scripts.html
+
+##### _Adding Custom Properties :_
+Example : project.ext.myprop = "Custom property" <br>
