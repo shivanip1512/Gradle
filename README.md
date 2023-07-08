@@ -42,7 +42,7 @@ Example : project.ext.myprop = "Custom property" <br>
 
 #### *__Task Object :__*
 
-Task task = new compile()
+Task task = new compile() <br>
 project.addTask(task)
 
 ```
