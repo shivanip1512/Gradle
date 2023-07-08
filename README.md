@@ -6,6 +6,10 @@ This project consists of notes and projects to help you master Gradle. Below are
 
 
 ### **_Understanding build.gradle_** :
+
+##### *__Project Object :__*
+
+
 ```
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -27,3 +31,7 @@ project.dependencies ({
     //this is closure
 })
 ```
+
+##### *__Project Properties :__*
+Example : println project.name <br>
+https://docs.gradle.org/current/dsl/org.gradle.api.Project.html
