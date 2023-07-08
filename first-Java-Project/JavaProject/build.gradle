@@ -11,12 +11,26 @@ plugins {
     id 'application'
 }
 
+project.description = "First Java Project"
+project.version = 1.0
+project.ext.myprop = "Custom Property"
+
 repositories {
+    println project.name
+    println project.description
+    println project.version
+    println project.path
+    println project.projectDir
+    println project.myprop
+    println project.property("myprop")
+    println 'repositories'
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
+        println 'dependencies'
+
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13.2'
 
@@ -32,18 +46,19 @@ java {
 }
 
 application {
+        println 'application'
     // Define the main class for the application.
     mainClass = 'com.shivani.gradle.App'
 }
 
-println 'outside task Start...'
-task firstTask{
-    println 'Gradle Rocks!'  // executed in configuration phase - NOT task logic
-    doFirst(){
-       println 'Do First :)' // executed first during execution phase
-    }
-    doLast(){
-       println 'Do Last :}' // executed last during execution phase
-    }
-}
-println 'outside task End...'
+// println 'outside task Start...'
+// task firstTask{
+//     println 'Gradle Rocks!'  // executed in configuration phase - NOT task logic
+//     doFirst(){
+//        println 'Do First :)' // executed first during execution phase
+//     }
+//     doLast(){
+//        println 'Do Last :}' // executed last during execution phase
+//     }
+// }
+// println 'outside task End...'
