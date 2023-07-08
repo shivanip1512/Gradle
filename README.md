@@ -53,3 +53,30 @@ project.addTask(task)
  >>gradlew.bat fT
 ```
 
+All tasks by default executes at cofiguration phase.<br>
+Inorder to make them execute at build stage, wrap them **around doLast** method.
+<br><br>
+ Link tasks : ```dependsOn``` and ```finalizedBy```
+ ```
+ task deployToStage{
+    println "Deployed to Stage conf"  // at configuration stage
+   doLast{
+      println "Deployed to Stage"   // at build stage
+   }
+ }
+
+ task deployToProd{
+   doLast{
+      println "Deployed to Prod"   // at build stage
+   }
+ }
+
+ task cleanupFiles{
+   doLast{
+      println "Cleaned-up Files"   // at build stage
+   }
+ }
+
+ deployToProd.dependsOn deployToStage
+ deployToProd.finalizedBy cleanupFiles
+ ```

@@ -6,7 +6,31 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-task (firstTask){
+ task (firstTask){
+   def abc = 123
+   println abc
     println 'Gradle Rocks!!'
  }
  
+ task deployToStage{
+    println "Deployed to Stage conf"  // at configuration stage
+   doLast{
+      println "Deployed to Stage"   // at build stage
+   }
+ }
+
+ task deployToProd{
+   doLast{
+      println "Deployed to Prod"   // at build stage
+   }
+ }
+
+ task cleanupFiles{
+   doLast{
+      println "Cleaned-up Files"   // at build stage
+   }
+ }
+
+ deployToProd.dependsOn deployToStage
+ deployToProd.finalizedBy cleanupFiles
+ defaultTasks "deployToStage"
