@@ -1,13 +1,13 @@
-# Gradle
+# **Gradle**
 
 This project consists of notes and projects to help you master Gradle. Below are links for the same :
 1. Basic Gradle Project: https://github.com/shivanip1512/Gradle/tree/main/first-project#readme
 2. Gradle Java Project : https://github.com/shivanip1512/Gradle/tree/main/first-Java-Project#readme
 
 
-### **_Understanding build.gradle_** :
+## **_Understanding build.gradle_** :
 
-##### *__Project Object :__*
+#### *__Project Object :__*
 
 
 ```
@@ -39,3 +39,17 @@ Example : println project.name <br>
 
 ##### _Adding Custom Properties :_
 Example : project.ext.myprop = "Custom property" <br>
+
+#### *__Task Object :__*
+
+Task task = new compile()
+project.addTask(task)
+
+```
+ project.task (firstTask){
+    println 'Gradle Rocks!!'
+ }
+ 
+ >>gradlew.bat fT
+```
+
