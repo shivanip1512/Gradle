@@ -1,0 +1,6 @@
+subprojects{
+    task printProjectName{
+    doLast(){
+     print project.name
+    }
+}}
