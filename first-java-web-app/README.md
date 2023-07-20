@@ -10,3 +10,7 @@
 
 ### **SonarQube Report:**
 ![image](https://github.com/shivanip1512/Gradle/assets/89596433/58cb4ec1-9149-4fcd-9150-9d95c3ff7adb)
+
+### **Jenkins Gradle Build:**
+![image](https://github.com/shivanip1512/Gradle/assets/89596433/3468a31c-b5c6-4ec0-91af-bc39b951d089)
+
