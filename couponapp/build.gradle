@@ -1,6 +1,9 @@
 subprojects{
     apply plugin: 'application'
 
+    version = '1.0'
+    group = 'com.shivani.gradle'
+
     repositories {
         mavenCentral()
     }
