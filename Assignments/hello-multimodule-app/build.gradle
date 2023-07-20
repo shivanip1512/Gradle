@@ -1,0 +1,12 @@
+subprojects{
+    apply plugin: 'application'
+    repositories {
+        mavenCentral()
+    }
+}
+
+project(':web'){
+    dependencies{
+        implementation project(':data')
+    }
+}
