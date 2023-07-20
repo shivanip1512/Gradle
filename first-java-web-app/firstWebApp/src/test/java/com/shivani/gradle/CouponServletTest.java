@@ -4,8 +4,10 @@
 package com.shivani.gradle;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -15,6 +17,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -36,5 +39,14 @@ public class CouponServletTest {
 		when(response.getWriter()).thenReturn(printWriter);
 		new CouponServlet().doGet(request, response);
 		assertEquals("SUPERSALE", stringWriter.toString());
+	}
+	
+	@Test
+	public void doPost() throws Exception {
+		when(request.getParameter("coupon")).thenReturn("SUPERSALE");
+		when(request.getRequestDispatcher("response.jsp")).thenReturn(requestDispatcher);
+		new CouponServlet().doPost(request, response);
+		verify(request).setAttribute("discount", "Discount for coupon SUPERSALE is 50%");
+		verify(requestDispatcher).forward(request, response);
 	}
 }
