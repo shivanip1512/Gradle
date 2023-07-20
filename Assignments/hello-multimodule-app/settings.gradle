@@ -3,5 +3,4 @@ plugins {
 }
 
 rootProject.name = 'hello-multimodule-app'
-include('web')
-include('data')
+include 'web','data'
