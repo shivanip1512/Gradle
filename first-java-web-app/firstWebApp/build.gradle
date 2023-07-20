@@ -1,6 +1,7 @@
 plugins {
 	id 'war'
 	id "org.gretty" version "4.0.3"
+	id 'jacoco'
 }
 
 repositories {
@@ -14,3 +15,6 @@ dependencies {
 }
 
 gretty.httpPort = 8082
+
+test.finalizedBy jacocoTestReport
+jacocoTestReport.dependsOn test
