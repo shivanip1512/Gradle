@@ -10,11 +10,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		resp.getWriter().print("SUPERSALE");
-	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
