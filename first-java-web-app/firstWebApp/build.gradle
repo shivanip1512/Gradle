@@ -1,3 +1,4 @@
+import com.shivani.gradle.MyAWSPlugin;
 plugins {
 	id 'war'
 	id "org.gretty" version "4.0.3"
@@ -16,22 +17,6 @@ dependencies {
 }
 
 gretty.httpPort = 8082
-
-public class MyAWSPlugin implements Plugin<Project>{
-	public void apply(Project project){
-		project.task("copyToS3"){
-			doLast{
-				println "Copied to S3"
-			}
-		}
-
-		project.task("deployToEC2"){
-			doLast{
-				println "Application is up and running on AWS EC2"
-			}
-		}
-	}
-}
 
 apply plugin: MyAWSPlugin
 
